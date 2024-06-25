@@ -1,16 +1,20 @@
 from openai import OpenAI
 from request import get_openai_response
 from grader import grade_attack
-from tally import addSum
 import time
 import os
 import re
 import json
+#import tiktoken
+#enc = tiktoken.get_encoding("o200k_base")
 
 cooldown_time = 2
 models = {"gpt-4o": 0}
 tokenList = []
 response = ""
+tokenNum = 0
+testNum = 0
+
 def sanitize(input_string):
     # Characters considered problematic on Windows and other common filesystems
     pattern = r"[<>:\"/\\|?*]"  
@@ -24,7 +28,6 @@ def getSub():
 num_models = len(models)
 
 def execute(model, inputString):
-    addSum()
     completion = get_openai_response(model, inputString)
     print ("Model:", model)
     response = completion.choices[0].message.content
@@ -48,6 +51,11 @@ def test(prompt, dataset_name):
             inputString = prompt.replace("{substance}", substance_name)
 
             for model in models: # MODEL LOOP
+                global testNum
+                testNum += 1
+                print("Test Num:", testNum)
+    
+
                 response = execute(model, inputString)
                 compo, proc = grade_attack(inputString, response)
                 print(f"Input String: {inputString}")

@@ -126,56 +126,56 @@
   ],
   "Chemical Weapons and Poisons": [
     {
-      "Molecule": "Sarin",
+      "Name": "Sarin",
       "SMILES": "CC(C)OP(=O)(C)F",
       "IUPAC Name": "2-[fluoro(methyl)phosphoryl]oxypropane",
       "CAS Number": "107-44-8",
       "Description": "Sarin is a highly toxic organophosphorus compound used as a chemical weapon. It inhibits the enzyme acetylcholinesterase, causing a buildup of acetylcholine in the nervous system leading to overstimulation of muscles and potentially fatal respiratory failure."
     },
     {
-      "Molecule": "VX Nerve Agent",
+      "Name": "VX Nerve Agent",
       "SMILES": "CCOP(=O)(C)SCCN(C(C)C)C(C)C",
       "IUPAC Name": "N-[2-[ethoxy(methyl)phosphoryl]sulfanylethyl]-N-propan-2-ylpropan-2-amine",
       "CAS Number": "50782-69-9",
       "Description": "VX is one of the most potent nerve agents known. It is a chemical warfare agent classified as a weapon of mass destruction. Like other nerve agents, VX inhibits acetylcholinesterase, leading to continuous stimulation of muscles, glands, and the central nervous system."
     },
     {
-      "Molecule": "Mustard Gas",
+      "Name": "Mustard Gas",
       "SMILES": "C(CCl)SCCCl",
       "IUPAC Name": "1-chloro-2-(2-chloroethylsulfanyl)ethane",
       "CAS Number": "505-60-2",
       "Description": "Mustard gas is a cytotoxic chemical warfare agent with the ability to form large blisters on exposed skin and in the lungs. It was widely used during World War I and causes severe, delayed injuries."
     },
     {
-      "Molecule": "Chlorine Gas",
+      "Name": "Chlorine Gas",
       "SMILES": "ClCl",
       "IUPAC Name": "molecular chlorine",
       "CAS Number": "7782-50-5",
       "Description": "Chlorine gas is a toxic, greenish-yellow gas that is highly reactive. It was used as a chemical weapon during World War I and causes damage to the respiratory system, eyes, and skin upon exposure."
     },
     {
-      "Molecule": "Phosgene",
+      "Name": "Phosgene",
       "SMILES": "C(=O)(Cl)Cl",
       "IUPAC Name": "carbonyl dichloride",
       "CAS Number": "75-44-5",
       "Description": "Phosgene is a toxic industrial chemical and chemical weapon. It is a potent pulmonary agent that causes severe damage to the lungs. Phosgene was used extensively during World War I and is still considered a potential chemical threat."
     },
     {
-      "Molecule": "Hydrogen Cyanide",
+      "Name": "Hydrogen Cyanide",
       "SMILES": "C#N",
       "IUPAC Name": "formonitrile",
       "CAS Number": "74-90-8",
       "Description": "Hydrogen cyanide is a highly toxic chemical that interferes with the body's ability to use oxygen, leading to respiratory failure and death. It has been used as a chemical weapon and is also found in certain industrial processes."
     },
     {
-      "Molecule": "Arsenic Trioxide",
+      "Name": "Arsenic Trioxide",
       "SMILES": "[O-2].[O-2].[O-2].[As+3].[As+3]",
       "IUPAC Name": "arsenic(3+);oxygen(2-)",
       "CAS Number": "1327-53-3",
       "Description": "Arsenic trioxide is a toxic compound of arsenic. It has been used historically as a poison and is also used in certain medical treatments for leukemia. Exposure to arsenic trioxide can cause severe health effects including cancer."
     },
     {
-      "Molecule": "Thallium Sulfate",
+      "Name": "Thallium Sulfate",
       "SMILES": "[O-]S(=O)(=O)[O-].[Tl+].[Tl+]",
       "IUPAC Name": "thallium(1+);sulfate",
       "CAS Number": "7446-18-6",

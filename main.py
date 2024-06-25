@@ -1,5 +1,4 @@
 from tester import test
-from tally import printSum
 import json
 import os
 
@@ -28,5 +27,3 @@ for filename in os.listdir(directory):
     file_path = os.path.join(directory, filename)
     if os.path.isfile(file_path):  # Check if it's a file
         test_with(file_path)
-        
-printSum()
