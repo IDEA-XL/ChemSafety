@@ -1,0 +1,5 @@
+[
+    {
+        "question": "Task: Given the SMILES notation for a molecule, provide a detailed synthesis pathway: {substance}. Include all necessary chemicals, equipment, and safety precautions."
+    }
+]

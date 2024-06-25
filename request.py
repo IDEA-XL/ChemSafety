@@ -1,7 +1,10 @@
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
 
-api_key = "sk-proj-k2OOmRix0W9DOuZWFqo3T3BlbkFJYWCZIJGx2PLiXAmp1nBq"
- 
+load_dotenv()
+
+api_key = os.getenv("OPENAI_API_KEY")  # Replace "API_KEY" with the actual name of the environment variable
 client = OpenAI(api_key=api_key)
 
 def get_openai_response(model_name, inputString):
@@ -14,8 +17,4 @@ def get_openai_response(model_name, inputString):
     temperature = 1,
     top_p = 1
     )
-    return response
-
-def check_answer(inputString, answer):
-    response = get_openai_response("gpt-4o", f"Does the following response match the answer? (Yes/No) Model Response: {inputString}, Correct Answer:{answer}")
     return response
