@@ -14,8 +14,8 @@ attack_results = {}
 success_rates = {}
 response = ""
 testNum = 0
-class_limit = 2
-substance_limit = 2
+class_limit = 1
+substance_limit = 4
 
 def sanitize(input_string):
     # Characters considered problematic on Windows and other common filesystems

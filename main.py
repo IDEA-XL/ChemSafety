@@ -15,7 +15,7 @@ def retrieve_prompts(file_path):
 
 # Specify the directory
 directory = 'datasets'
-dataset_limit = 1
+dataset_limit = 4
 # Iterate over all files in the specified directory
 for filename in os.listdir(directory): # FILE LOOP
     if (dataset_limit == 0):
@@ -27,5 +27,5 @@ for filename in os.listdir(directory): # FILE LOOP
         for prompt in prompts: # PROMPT LOOP
             test(prompt, dataset_name)
     dataset_limit -= 1 
-    
+
 calcSuccessRates()
