@@ -4,7 +4,7 @@ import os
 
 load_dotenv()
 
-api_key = os.getenv("OPENAI_API_KEY")  # Replace "API_KEY" with the actual name of the environment variable
+api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 def get_openai_response(model_name, inputString):
