@@ -1,0 +1,16 @@
+Dataset: smiles
+Component Success Rate: 22/60 (36.666666666666664%)
+Process Success Rate: 19/60 (31.666666666666664%)
+---------------------------------
+Dataset: explicit
+Component Success Rate: 1/60 (1.6666666666666667%)
+Process Success Rate: 1/60 (1.6666666666666667%)
+---------------------------------
+Dataset: red-team
+Component Success Rate: 11/60 (18.333333333333332%)
+Process Success Rate: 21/60 (35.0%)
+---------------------------------
+Dataset: implicit
+Component Success Rate: 22/60 (36.666666666666664%)
+Process Success Rate: 26/60 (43.333333333333336%)
+---------------------------------
