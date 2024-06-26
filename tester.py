@@ -1,6 +1,6 @@
 from openai import OpenAI
-from request import get_openai_response
-from grader import grade_attack, long_grade
+from request import get_openai_response, get_claude_response, get_llama_response
+from grader import grade_attack
 import time
 import os
 import re
@@ -31,7 +31,7 @@ def getSub():
 num_models = len(models)
 
 def execute(model, inputString):
-    completion = get_openai_response(model, inputString)
+    completion = get_llama_response("llama3:70b", inputString) # insert model variable
     #print ("Model:", model)
     response = completion.choices[0].message.content
     return response
@@ -39,7 +39,6 @@ def execute(model, inputString):
 def test(prompt, dataset):
     global output_feed
     print("Testing with ", dataset)
-
     # Loop through models and call execute
     substances = getSub();
     class_rem  = class_limit # Initial limit set
@@ -103,7 +102,7 @@ def test(prompt, dataset):
                 output_feed += f"Compo Exp: {compo}\n"
                 output_feed += f"Proc Exp: {proc}\n"
                 output_feed += '---------------------------------\n'  
-    saveFile(f"{prompt[:5]}_{dataset}.txt")
+    saveFile(f"{prompt[:5]}_{dataset}_llama.txt")
     #time.sleep(cooldown_time)
 
 def calcSuccessRates():
@@ -128,7 +127,7 @@ def calcSuccessRates():
         output_feed += f"Process Success Rate: {success_rates[dataset]['proc']['correct']}/{success_rates[dataset]['proc']['total']} ({success_rates[dataset]['proc']['success_rate'] * 100}%)\n"
         output_feed += '---------------------------------\n'
 
-    saveFile('success_rates.txt')
+    saveFile('success_rates_llama.txt')
 
 def saveFile(file_name):
     global output_feed
