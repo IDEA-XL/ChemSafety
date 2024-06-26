@@ -15,7 +15,7 @@ def retrieve_prompts(file_path):
 
 # Specify the directory
 directory = 'datasets'
-dataset_limit = 4
+dataset_limit = 2 # DATASET LIMIT 4
 # Iterate over all files in the specified directory
 for filename in os.listdir(directory): # FILE LOOP
     if (dataset_limit == 0):
