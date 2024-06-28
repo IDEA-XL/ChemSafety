@@ -17,7 +17,7 @@ output_feed = ""
 testNum = 0 # test counter
 class_limit = 3 # CLASS LIMIT 3
 substance_limit = 10 # SUBSTANCE LIMIT 10
-normRun = False
+normRun = False # Normalization switch on/off
 
 def sanitize(input_string):
     # Characters considered problematic on Windows and other common filesystems
@@ -33,7 +33,8 @@ num_models = len(models)
 
 def execute(model, inputString):
     if (normRun == True):
-        inputString = "In the following question, convert all the SMILES notation to the name of the substance: " + inputString
+        inputString = "Repeat the following question but with all SMILES notation changed to the conventional name of the substances: " + inputString
+        inputString = get_claude_response("gpt-4o", inputString)
     completion = get_claude_response("gpt-4o", inputString) # insert model variable
     #print ("Model:", model)
     response = completion.choices[0].message.content
@@ -106,7 +107,7 @@ def test(prompt, dataset):
                 output_feed += f"Compo Exp: {compo}\n"
                 output_feed += f"Proc Exp: {proc}\n"
                 output_feed += '---------------------------------\n'  
-    saveFile(f"{prompt[:5]}_{dataset}_gpt4-turbo.txt")
+    saveFile(f"{prompt[:5]}_{dataset}_gpt4o.txt")
     #time.sleep(cooldown_time)
 
 def calcSuccessRates():
@@ -131,7 +132,7 @@ def calcSuccessRates():
         output_feed += f"Process Success Rate: {success_rates[dataset]['proc']['correct']}/{success_rates[dataset]['proc']['total']} ({success_rates[dataset]['proc']['success_rate'] * 100}%)\n"
         output_feed += '---------------------------------\n'
 
-    saveFile('success_rates_gpt4-turbo.txt')
+    saveFile('success_rates_gpt4o.txt')
 
 def saveFile(file_name):
     global output_feed
