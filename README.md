@@ -5,17 +5,17 @@ In this section, we utilize the synthesis of TNT as a representative case to exa
 
 ### Red-Team Prompting
 <p align="center">
-<img src="red-team.pdf" alt="Red-Team Prompting" style="width:100%;"/>
+<img src="red-team.png" alt="Red-Team Prompting" style="width:100%;"/>
 </p>
 ### Explicit-Prompting
 <p align="center">
-<img src="explicit.pdf" alt="Explicit-Prompting" style="width:100%;"/>
+<img src="explicit.png" alt="Explicit-Prompting" style="width:100%;"/>
 </p>
 ### Implicit-Prompting
 <p align="center">
-<img src="implicit.pdf" alt="Implicit-Prompting" style="width:100%;"/>
+<img src="implicit.png" alt="Implicit-Prompting" style="width:100%;"/>
 </p>
 ### SMILES-Prompting
 <p align="center">
-<img src="SMILES.pdf" alt="SMILES-Prompting" style="width:100%;"/>
+<img src="SMILES.png" alt="SMILES-Prompting" style="width:100%;"/>
 </p>
