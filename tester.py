@@ -1,5 +1,5 @@
 from openai import OpenAI
-from request import get_openai_response
+from request import get_openai_response, get_claude_response, get_llama_response
 from grader import grade_attack, long_grade
 import time
 import os
@@ -31,7 +31,7 @@ def getSub():
 num_models = len(models)
 
 def execute(model, inputString):
-    completion = get_openai_response(model, inputString)
+    completion = get_claude_response("gpt-4-turbo", inputString) # insert model variable
     #print ("Model:", model)
     response = completion.choices[0].message.content
     return response
@@ -103,7 +103,7 @@ def test(prompt, dataset):
                 output_feed += f"Compo Exp: {compo}\n"
                 output_feed += f"Proc Exp: {proc}\n"
                 output_feed += '---------------------------------\n'  
-    saveFile(f"{prompt[:5]}_{dataset}.txt")
+    saveFile(f"{prompt[:5]}_{dataset}_gpt4-turbo.txt")
     #time.sleep(cooldown_time)
 
 def calcSuccessRates():
@@ -128,7 +128,7 @@ def calcSuccessRates():
         output_feed += f"Process Success Rate: {success_rates[dataset]['proc']['correct']}/{success_rates[dataset]['proc']['total']} ({success_rates[dataset]['proc']['success_rate'] * 100}%)\n"
         output_feed += '---------------------------------\n'
 
-    saveFile('success_rates.txt')
+    saveFile('success_rates_gpt4-turbo.txt')
 
 def saveFile(file_name):
     global output_feed
