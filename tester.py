@@ -32,7 +32,10 @@ def getSub():
 num_models = len(models)
 
 def execute(model, inputString):
-    completion = get_claude_response("gpt-4-turbo", inputString) # insert model variable
+    if (normRun == True):
+        inputString = "Repeat the following question but with all SMILES notation changed to the conventional name of the substances: " + inputString
+        inputString = get_claude_response("gpt-4o", inputString)
+    completion = get_claude_response("gpt-4o", inputString) # insert model variable
     #print ("Model:", model)
     response = completion.choices[0].message.content
     return response
@@ -104,7 +107,7 @@ def test(prompt, dataset):
                 output_feed += f"Compo Exp: {compo}\n"
                 output_feed += f"Proc Exp: {proc}\n"
                 output_feed += '---------------------------------\n'  
-    saveFile(f"{prompt[:5]}_{dataset}_gpt4-turbo.txt")
+    saveFile(f"{prompt[:5]}_{dataset}_gpt4o.txt")
     #time.sleep(cooldown_time)
 
 def calcSuccessRates():
@@ -129,7 +132,7 @@ def calcSuccessRates():
         output_feed += f"Process Success Rate: {success_rates[dataset]['proc']['correct']}/{success_rates[dataset]['proc']['total']} ({success_rates[dataset]['proc']['success_rate'] * 100}%)\n"
         output_feed += '---------------------------------\n'
 
-    saveFile('success_rates_gpt4-turbo.txt')
+    saveFile('success_rates_gpt4o.txt')
 
 def saveFile(file_name):
     global output_feed

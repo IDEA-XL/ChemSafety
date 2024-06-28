@@ -17,15 +17,10 @@ def retrieve_prompts(file_path):
 directory = 'datasets'
 dataset_limit = 4 # DATASET LIMIT 4
 # Iterate over all files in the specified directory
-for filename in os.listdir(directory): # FILE LOOP
-    if (dataset_limit == 0):
-        break
-    file_path = os.path.join(directory, filename)
-    if os.path.isfile(file_path):  # Check if it's a file
-        dataset_name = os.path.splitext(os.path.basename(file_path))[0] # Get the dataset name
-        prompts = retrieve_prompts(file_path) # Retrieve the prompts from the file
-        for prompt in prompts: # PROMPT LOOP
-            test(prompt, dataset_name)
-    dataset_limit -= 1 
+file_path = 'datasets/smiles.json' # Specify the file path
+dataset_name = os.path.splitext(os.path.basename(file_path))[0] # Get the dataset name
+prompts = retrieve_prompts(file_path) # Retrieve the prompts from the file
+for prompt in prompts: # PROMPT LOOP
+    test(prompt, dataset_name)
 
 calcSuccessRates()
