@@ -57,3 +57,17 @@ def get_llama_response(model_name, inputString):
         ]
     )
     return response
+
+ds_api_key=os.getenv("DS_API_KEY")
+client = OpenAI(api_key=ds_api_key, base_url="https://api.deepseek.com")
+
+def get_deepseek_response(inputString):
+    response = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[
+        #{"role": "system", "content": "You are a helpful assistant"},
+        {"role": "user", "content": inputString}
+    ],
+    stream=False
+    )
+    return response.choices[0].message.content
